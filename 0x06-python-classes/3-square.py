@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module 3
-Defines class Square with private attribute size and public instance method area
+Defines class Square
 """
 
 
@@ -12,18 +12,19 @@ class Square:
         size (int): size of a side
     '''
     def __init__(self, size=0):
-       """
-       Initializes the data
+        """
+        Initializes the data
 
-       Attributes:
+        Attributes:
             size: has to be int
-       """
-       if int(size) != size:
-           raise TypeError("size must be an integer")
-       elif size < 0:
+        """
+        if int(size) != size:
+            raise TypeError("size must be an integer")
+        elif size < 0:
             raise ValueError("size must be >= 0")
-       else:
+        else:
             self.__size = size
+
     def area(self):
         '''
         Calculates and returns the area of the square
