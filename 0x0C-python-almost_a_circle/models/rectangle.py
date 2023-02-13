@@ -32,7 +32,6 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
 
-
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -46,7 +45,7 @@ class Rectangle(Base):
             value of width
         """
         return self.__width
-    
+
     @property
     def height(self):
         """Retrieves the value of 'height'
@@ -70,8 +69,7 @@ class Rectangle(Base):
             value of y
         """
         return self.__y
-
-
+    
     @width.setter
     def width(self, value):
         """sets the value of 'width'"""
@@ -116,21 +114,19 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        """Prints in stdout the Rectangle instance with the 
+        """Prints in stdout the Rectangle instance with the
         charachter '#'
         """
         for i in range(self.__y):
             print()
-        #for i in range(self.__x):
-            #print(" ")
         for col in range(self.__height):
-            print(" " * self.__x, end='') 
+            print(" " * self.__x, end='')
             print("#" * self.__width)
 
     def __str__(self):
         """Returns string representation of the instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
-    
+
     def update(self, *args, **kwargs):
         """Updates the values of the class"""
         if args:
@@ -160,7 +156,6 @@ class Rectangle(Base):
                 self.__x = kwargs["x"]
 
     def to_dictionary(self):
-        """Returns the dictionary representation 
+        """Returns the dictionary representation
         of a Rectangle"""
         return {"id": self.id, "x": self.__x, "y": self.__y, "width": self.__width, "height": self.__height}
-
